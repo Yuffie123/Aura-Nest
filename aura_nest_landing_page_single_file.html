@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aura Nest · Eastern Wisdom × Western Light</title>
+  <meta name="description" content="Aura Nest · Tarot, Astrology, and Five Elements healing — listen to your inner voice and find balance within and beyond." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f0f14;           /* starry night */
+      --ink:#eae8f5;          /* ivory ink */
+      --muted:#bdb9d6;        /* soft lavender gray */
+      --accent:#dcc6ff;       /* moonlit lilac */
+      --accent-2:#f4e6b3;     /* soft gold */
+      --card:#171822;         /* panel */
+      --brand:#c9b6ff;        /* primary lilac */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; color:var(--ink); background: radial-gradient(1200px 800px at 80% -10%, #332e52 0%, rgba(15,15,20,0) 60%),
+      radial-gradient(900px 700px at 10% 10%, #1c2034 0%, rgba(15,15,20,0) 50%), var(--bg);
+      font-family: Lato, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:0 20px}
+
+    /* Nav */
+    nav{position:sticky; top:0; backdrop-filter: blur(8px); background: rgba(15,15,20,0.55); border-bottom:1px solid rgba(255,255,255,0.06); z-index:50}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .logo{display:flex; gap:10px; align-items:center}
+    .logo-mark{width:28px; height:28px; border-radius:50%; background: conic-gradient(from 210deg, var(--accent-2), var(--brand), var(--accent)); box-shadow:0 0 24px rgba(201,182,255,.5)}
+    .brand{font-family:"Playfair Display", serif; font-weight:700; letter-spacing:0.4px}
+    .nav-links{display:flex; gap:18px; font-weight:500; color:var(--muted)}
+    .nav-links a:hover{color:var(--ink)}
+
+    /* Hero */
+    .hero{position:relative; padding:96px 0 72px}
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.1); color:var(--muted); background:rgba(255,255,255,.03)}
+    .title{font-family:"Playfair Display", serif; font-size:clamp(32px, 6vw, 56px); line-height:1.1; margin:18px 0}
+    .title em{font-style:normal; color:var(--accent-2)}
+    .subtitle{color:var(--muted); max-width:780px}
+    .actions{display:flex; gap:14px; margin-top:26px; flex-wrap:wrap}
+    .btn{padding:12px 18px; border-radius:14px; border:1px solid rgba(255,255,255,.1); background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02)); color:var(--ink); font-weight:600}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{background:linear-gradient(180deg, rgba(244,230,179,.25), rgba(244,230,179,.08)); border-color:rgba(244,230,179,.35); color:#1b1a13}
+
+    .halo{position:absolute; inset:-40px -20px auto auto; width:280px; height:280px; filter:blur(38px); background: radial-gradient(closest-side, rgba(201,182,255,.55), rgba(201,182,255,0)); opacity:.6; pointer-events:none}
+
+    /* Cards / sections */
+    section{padding:70px 0}
+    .section-title{font-family:"Playfair Display", serif; font-size:clamp(24px,4.5vw,36px); margin:0 0 10px}
+    .section-kicker{color:var(--muted); margin-bottom:22px}
+
+    .grid{display:grid; gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3, 1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2, 1fr)}
+
+    .card{background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:22px}
+    .card h3{margin:0 0 8px; font-family:"Playfair Display", serif}
+    .card p{margin:0; color:var(--muted)}
+
+    /* Testimonial */
+    .quote{font-family:"Playfair Display", serif; font-size:22px}
+
+    /* Contact */
+    form{display:grid; gap:12px}
+    input, textarea{width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:#0f1018; color:var(--ink); outline:none}
+    input:focus, textarea:focus{border-color:var(--brand)}
+
+    /* Footer */
+    footer{padding:50px 0; color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .grid.cols-3{grid-template-columns: 1fr 1fr}
+      .grid.cols-2{grid-template-columns: 1fr}
+      .nav-links{display:none}
+    }
+    @media (max-width: 540px){
+      .grid.cols-3{grid-template-columns: 1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav>
+    <div class="container nav-inner">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true"></div>
+        <div class="brand">Aura Nest</div>
+      </div>
+      <div class="nav-links">
+        <a href="#vision">Vision</a>
+        <a href="#mission">Mission</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="halo"></div>
+    <div class="container">
+      <span class="badge">🔮 Tarot · Astrology · Five Elements · Healing</span>
+      <h1 class="title">Where <em>Eastern wisdom</em> meets <em>Western light</em> — listen to your inner voice and find balance within and beyond.</h1>
+      <p class="subtitle">We blend astrology, tarot, and the Five Elements into modern healing rituals — guiding you toward emotional balance, inner peace, and harmony with the world.</p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Book a Reading</a>
+        <a class="btn" href="#services">Explore Services</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- VISION -->
+  <section id="vision">
+    <div class="container">
+      <h2 class="section-title">Vision</h2>
+      <p class="section-kicker">To inspire a mindful and spiritual way of living — where East meets West and humanity moves toward harmony with the universe.</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>EN</h3>
+          <p>To inspire a mindful and spiritual way of living that helps individuals rediscover harmony within themselves and with the universe — where Eastern wisdom and Western philosophy meet, guiding humanity toward unity between heaven, nature, and the self.</p>
+        </div>
+        <div class="card">
+          <h3>中文</h3>
+          <p>启发一种有意识的灵性生活方式，帮助人们在自我与宇宙之间重拾和谐——在东方智慧与西方哲理的交汇处，引导人类迈向天、地、人合一的境界。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section id="mission">
+    <div class="container">
+      <h2 class="section-title">Mission</h2>
+      <p class="section-kicker">Integrating ancient insight with modern practice.</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>EN</h3>
+          <p>We bring together Eastern wisdom and Western philosophy to guide people on a journey of self-understanding and harmony. Through astrology and tarot, we help individuals explore their inner world and human nature; through the Five Elements philosophy, we translate that awareness into emotional balance, inner peace, and a harmonious connection with the universe.</p>
+        </div>
+        <div class="card">
+          <h3>中文</h3>
+          <p>我们融合东方智慧与西方哲学，引导人们踏上一段自我觉察与和谐之旅。以星座与塔罗帮助人们探索内心与人性，以五行哲理将这种觉察转化为情绪平衡、内在宁静，以及与宇宙的和谐共处。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Offerings</h2>
+      <p class="section-kicker">Practical paths toward balance and clarity.</p>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Tarot Guidance</h3>
+          <p>Clarity-focused spreads for love, career, and self-alignment. 20–45 min readings with actionable insights.</p>
+        </div>
+        <div class="card">
+          <h3>Astrology Insight</h3>
+          <p>Natal chart & transit reviews to understand cycles, gifts, and growth themes.</p>
+        </div>
+        <div class="card">
+          <h3>Five Elements Rituals</h3>
+          <p>Personalized practices and healing products inspired by Wood · Fire · Earth · Metal · Water.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL / QUOTE -->
+  <section>
+    <div class="container">
+      <div class="card">
+        <p class="quote">“Understand the stars, balance the elements, and you will find a gentle way to live with the world.”</p>
+        <p style="color:var(--muted); margin-top:6px">— Aura Nest</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-kicker">Ready to begin? Leave a note — we’ll reply within 24 hours.</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <form action="#" method="post" onsubmit="event.preventDefault(); alert('Thank you! We will get back to you soon.');">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" rows="5" placeholder="What would you like to explore? (Tarot / Astrology / Five Elements)" required></textarea>
+            <button class="btn primary" type="submit">Send Message</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Find us</h3>
+          <p>Toronto · Online Sessions</p>
+          <p style="margin-top:10px; color:var(--muted)">Follow on TikTok · @auranest — Eastern wisdom × Western light ↓</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap">
+      <div>© <span id="year"></span> Aura Nest · All rights reserved.</div>
+      <div style="color:var(--muted)">Tarot · Astrology · Five Elements · Healing</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
